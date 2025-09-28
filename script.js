@@ -41,7 +41,7 @@ btn.addEventListener("click", function() {
 	cells.forEach(cell => {
     cell.addEventListener("click", function() {
         if (cell.textContent !== "") return;
-        cell.textContent = turn;
+        cell.textContent = turn.toLowerCase();
         moves++;
 
 		let playerCells = Array.from(cells)
