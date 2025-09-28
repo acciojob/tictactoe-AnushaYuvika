@@ -61,7 +61,7 @@ btn.addEventListener("click", function() {
             }
 
 			turn = turn === "X" ? "O" : "X";
-	            msg.textContent = `${turn === "X" ? player1 : player2} you're up`;
+	            msg.textContent = `${turn === "X" ? player1 : player2}, you're up`;
 	        });
 
 		});
