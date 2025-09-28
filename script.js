@@ -50,7 +50,7 @@ btn.addEventListener("click", function() {
 
             let won = winCombos.some(combo => combo.every(id => playerCells.includes(id)));
             if (won) {
-                msg.textContent = `${turn === "X" ? player1 : player2}, congratulations you won!`;
+                msg.textContent = `${turn === "X" ? player1 : player2} congratulations you won!`;
                 cells.forEach(c => c.style.pointerEvents = "none"); 
                 return;
             }
@@ -61,7 +61,7 @@ btn.addEventListener("click", function() {
             }
 
 			turn = turn === "X" ? "O" : "X";
-	            msg.textContent = `${turn === "X" ? player1 : player2}, you're up`;
+	            msg.textContent = `${turn === "X" ? player1 : player2} you're up`;
 	        });
 
 		});
