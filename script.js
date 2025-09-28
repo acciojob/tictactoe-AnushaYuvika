@@ -3,8 +3,8 @@ let btn = document.querySelector("#submit");
 let container = document.querySelector(".container");
 
 btn.addEventListener("click", function() {
-	let player1 = document.querySelector("#player-1").value.trim();
-	let player2 = document.querySelector("#player-2").value.trim();
+	let player1 = document.querySelector("#player1").value.trim();
+	let player2 = document.querySelector("#player2").value.trim();
 
 	if (player1 === "" || player2 === "") {
 		alert("Please enter names for both players!");
