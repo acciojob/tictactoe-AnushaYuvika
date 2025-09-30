@@ -37,32 +37,59 @@ btn.addEventListener("click", function() {
 	    [1,5,9],[3,5,7]
 	];
 
-	cells.forEach(cell => {
-		cell.addEventListener("click", function() {
-			if (cell.textContent !== "") return;
+	// cells.forEach(cell => {
+	// 	cell.addEventListener("click", function() {
+	// 		if (cell.textContent !== "") return;
 
-			cell.textContent = turn;
+	// 		cell.textContent = turn;
 
-			moves++;
+	// 		moves++;
 
-			let playerCells = Array.from(cells)
-                                   .filter(c => c.textContent === turn)
-                                   .map(c => Number(c.id));
+	// 		let playerCells = Array.from(cells)
+ //                                   .filter(c => c.textContent === turn)
+ //                                   .map(c => Number(c.id));
 
-			let won = winCombos.some(combo => combo.every(id => playerCells.includes(id)));
-			if (won) {
-				msg.textContent = `${turn === "X" ? player1 : player2} congratulations you won!`;
-				cells.forEach(c => c.style.pointerEvents = "none"); 
-				return;
-			}
+	// 		let won = winCombos.some(combo => combo.every(id => playerCells.includes(id)));
+	// 		if (won) {
+	// 			msg.textContent = `${turn === "X" ? player1 : player2} congratulations you won!`;
+	// 			cells.forEach(c => c.style.pointerEvents = "none"); 
+	// 			return;
+	// 		}
 
-			if (moves === 9) {
-				msg.textContent = "It's a tie!";
-				return;
-			}
+	// 		if (moves === 9) {
+	// 			msg.textContent = "It's a tie!";
+	// 			return;
+	// 		}
 
-			turn = turn === "X" ? "O" : "X";
-			msg.textContent = `${turn === "X" ? player1 : player2}, you're up`;
-		});
-	});
+	// 		turn = turn === "X" ? "O" : "X";
+	// 		msg.textContent = `${turn === "X" ? player1 : player2}, you're up`;
+	// 	});
+	// });
+	cell.addEventListener("click", function() {
+    if (cell.textContent !== "") return;
+
+    cell.textContent = turn.toLowerCase(); // lowercase
+
+    moves++;
+
+    let playerCells = Array.from(cells)
+                           .filter(c => c.textContent === turn.toLowerCase())
+                           .map(c => Number(c.id));
+
+    let won = winCombos.some(combo => combo.every(id => playerCells.includes(id)));
+    if (won) {
+        msg.textContent = `${turn === "X" ? player1 : player2} congratulations you won!`;
+        cells.forEach(c => c.style.pointerEvents = "none"); 
+        return;
+    }
+
+    if (moves === 9) {
+        msg.textContent = "It's a tie!";
+        return;
+    }
+
+    turn = turn === "X" ? "O" : "X";
+    msg.textContent = `${turn === "X" ? player1 : player2}, you're up`;
+});
+
 });
