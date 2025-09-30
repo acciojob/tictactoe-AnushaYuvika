@@ -28,7 +28,7 @@ btn.addEventListener("click", function() {
 	let msg = document.querySelector(".message");
 	let cells = document.querySelectorAll(".cell");
 
-	let turn = "X"; 
+	let turn = "x"; 
 	let moves = 0;
 
 	const winCombos = [
