@@ -41,7 +41,7 @@ btn.addEventListener("click", function() {
 		cell.addEventListener("click", function() {
 			if (cell.textContent !== "") return;
 
-			cell.textContent = turn.toLowerCase();
+			cell.textContent = turn;
 
 			moves++;
 
